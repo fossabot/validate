@@ -26,6 +26,7 @@ setup(
     description = 'Test DataCamp exercises you have locally against the exercise validator',
     long_description=README,
     long_description_content_type='text/markdown',
+    license='GNU version 3',
     author='Filip Schouwenaars',
     author_email='filip@datacamp.com',
     url = 'https://github.com/datacamp/validate')
