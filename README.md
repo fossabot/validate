@@ -16,14 +16,16 @@ pip install git+https://github.com/datacamp/validate.git
 
 ## Demo
 
+You can use the validate package from the command line:
+
 ```
-cd <root_of_course_repo>
+$ cd <root_of_course_repo>
 
-# entire chapter1.md
-testch <course_id> <path_to_chapter_file>
+$ # test entire chapter1.md
+$ testch <course_id> <path_to_chapter_file>
 
-# specific exercise of chapter
-testch <course_id> <path_to_chapter_file> -k <ex_key>
+$ # test specific exercise of chapter
+$ testch <course_id> <path_to_chapter_file> -k <ex_key>
 ```
 
 ## Testing
