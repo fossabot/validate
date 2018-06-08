@@ -5,15 +5,3 @@ python:
 install: make install
 
 script: make test
-
-deploy:
-  provider: pypi
-  user: datacamp
-  password:
-  password:
-    secure: N308KK9IkSvMO5agrFoouE2MJ1u20oqeajl2WeLMxPJongQ1aNWMO1s5ZhsIV3TtwPqXtphkuPJMU2Jf8TcZZctde408/a2/l4K8x/4Pgm9SyAs3vVxVxqjfnk3ZjOlkUf0bkuVP43g8RzzuDk2J93x9ul8/um9p3ro+H1ma/3Ya9bPNAs69cUJLks7oHA5vEwrPwbyI8ZWxIuLxipJKCjiWfQnkuHFmVqAauVPJWrofpbn4741KkujiOdMsysMpWZBLxqkSirxxw7ad6+l/GywwvBAn0kW0moQog/5/txB50jdlGyA2ISiITAamZEtDn/938N9feiorfS/pK2nHzV5LCtgfCvW+ZSKYnBFp+AgbJDy3ovONpMw0wgmhDAo9j+aW7b2xWqOti35EbzNcLP2T6E991PJ5RxvMxMh2eqYs3uD3i0dLPvo9vfiEgaB4u7hLg1y5q+iWJ003nnfP5M7HoCXHGAYbXD6hGyJFUimct1ptV90Strwd0/xzoq4Y3Q9IjzipvNr+s4k+LXdwZwp9KH0p3AFohhaKxHSTGD3uTxBqZxPGNudy300BSNJRf6Q2z7yUTTfNN4WdNcJkgHxnOhtpOA9/OLYexDJ9/j5UEGgJqc9c8loNbQqgr3OzZDPqkScHZEhZGPpz3FSBsOiSQkMy+liEu37VSQfHq/Q=
-  on:
-    tags: true
-    distributions: sdist bdist_wheel
-    repo: datacamp/validate
-  skip_upload_docs: true
