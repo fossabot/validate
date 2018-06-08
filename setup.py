@@ -19,7 +19,7 @@ setup(
 	name=PACKAGE_NAME,
 	version=VERSION,
 	packages=['validate'],
-	install_requires=['markdown2'],
+	install_requires=['requests'],
     entry_points = {
         'console_scripts': ['testch=validate.command_line:main'],
     },
