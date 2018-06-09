@@ -1,3 +1,5 @@
+__version__ = '0.0.2'
+
 import argparse
 import requests
 import os
@@ -81,7 +83,7 @@ def validate_chapter(course_id,
     return(all_passed)
 
 def main():
-    parser = argparse.ArgumentParser(description='Test one or more exercises in a local chapter file against the validator.')
+    parser = argparse.ArgumentParser(description='Test one or more exercises in a chapter file on your computer against the validator.')
     parser.add_argument('course_id', type=str,
                         help='ID of the course you are testing (required to figure out active image)')
     parser.add_argument('chapter_file', type=str,

@@ -22,10 +22,10 @@ You can use the validate package from the command line:
 $ cd <root_of_course_repo>
 
 $ # test entire chapter1.md
-$ testch <course_id> <path_to_chapter_file>
+$ validate <course_id> <path_to_chapter_file>
 
 $ # test specific exercise of chapter
-$ testch <course_id> <path_to_chapter_file> -k <ex_key>
+$ validate <course_id> <path_to_chapter_file> -k <ex_key>
 ```
 
 ## Testing
