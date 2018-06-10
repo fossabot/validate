@@ -6,7 +6,7 @@ install:
 	pip install -e .
 
 test:
-	pytest --cov=validate
+	pytest --cov=src
 	codecov
 
 clean :
