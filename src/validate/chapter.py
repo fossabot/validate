@@ -44,9 +44,8 @@ def validate_chapter(course_id,
     if key:
         print('selecting exercise with key %s ...' % key)
         exercises = [ ex for ex in exercises if ex['key'] == key ]
+        assert len(exercises) == 1
     
-    assert len(exercises) == 1
-
     print('figuring out active course image ...')
     imb_resp = requests.get(IMB_URL_FMT % ('course', course_id))
     assert imb_resp.status_code == 200
