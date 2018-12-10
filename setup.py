@@ -3,31 +3,47 @@
 import re
 import ast
 from os import path
-from setuptools import setup, find_packages
+from setuptools import setup
 
-_version_re = re.compile(r'__version__\s+=\s+(.*)')
+PACKAGE_NAME = "validate"
+REQUIREMENT_NAMES = ["requests"]
 
-PKG = 'validate'
 HERE = path.abspath(path.dirname(__file__))
-with open(path.join(HERE, 'README.md'), encoding='utf-8') as fp:
+VERSION_FILE = path.join(HERE, "src", PACKAGE_NAME, "__init__.py")
+REQUIREMENTS_FILE = path.join(HERE, "requirements.txt")
+README_FILE = path.join(HERE, "README.md")
+
+with open(VERSION_FILE, encoding="utf-8") as fp:
+    _version_re = re.compile(r"__version__\s+=\s+(.*)")
+    VERSION = str(ast.literal_eval(_version_re.search(fp.read()).group(1)))
+with open(REQUIREMENTS_FILE, encoding="utf-8") as fp:
+    req_txt = fp.read()
+    _requirements_re_template = r"^({}(?:\s*[<>=]+\s*\S*)?)\s*(?:#.*)?$"
+    REQUIREMENTS = [
+        re.search(_requirements_re_template.format(requirement), req_txt, re.M).group(0)
+        for requirement in REQUIREMENT_NAMES
+    ]
+with open(README_FILE, encoding="utf-8") as fp:
     README = fp.read()
-with open(path.join(HERE, 'src', PKG, '__init__.py'), 'rb') as fp:
-    VERSION = str(ast.literal_eval(_version_re.search(
-        fp.read().decode('utf-8')).group(1)))
 
 setup(
-	name=PKG,
-	version=VERSION,
-	packages=[PKG],
-    package_dir={'': 'src'},
-	install_requires=['requests'],
-    entry_points = {
-        'console_scripts': ['validate=validate.chapter:main'],
-    },
-    description = 'Test DataCamp exercises you have locally against the exercise validator',
+    name=PACKAGE_NAME,
+    version=VERSION,
+    packages=[PACKAGE_NAME],
+    package_dir={"": "src"},
+    entry_points={"console_scripts": ["validate=validate.chapter:main"]},
+    install_requires=REQUIREMENTS,
+    description="Test DataCamp exercises you have locally against the exercise validator",
     long_description=README,
-    long_description_content_type='text/markdown',
-    license='GNU version 3',
-    author='Filip Schouwenaars',
-    author_email='filip@datacamp.com',
-    url = 'https://github.com/datacamp/validate')
+    long_description_content_type="text/markdown",
+    author="Filip Schouwenaars",
+    author_email="filip@datacamp.com",
+    maintainer="Jeroen Hermans",
+    maintainer_email="content-engineering@datacamp.com",
+    url="https://github.com/datacamp/validate",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: GNU Affero General Public License v3",
+        "Operating System :: OS Independent",
+    ],
+)
