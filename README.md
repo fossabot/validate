@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/datacamp/validate.svg?branch=master)](https://travis-ci.org/datacamp/validate)
 [![codecov](https://codecov.io/gh/datacamp/validate/branch/master/graph/badge.svg)](https://codecov.io/gh/datacamp/validate)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdatacamp%2Fvalidate.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdatacamp%2Fvalidate?ref=badge_shield)
 <!-- [![PyPI version](https://badge.fury.io/py/validate.svg)](https://badge.fury.io/py/validate) -->
 
 Test DataCamp exercises you have locally against the exercise validator.
@@ -35,3 +36,7 @@ pip install -r requirements.txt
 pip install -e .
 pytest
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdatacamp%2Fvalidate.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdatacamp%2Fvalidate?ref=badge_large)
